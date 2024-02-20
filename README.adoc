@@ -1,0 +1,12 @@
+= SPARQL-to-natural-language
+
+== Data
+
+data: https://docs.google.com/spreadsheets/d/16uT6HrrOMHKxNAo-sWf1s6jCmsesgCeWtreRMddUucw/edit#gid=1004375677
+
+file cache of collected data: link:./stored_data
+
+== Scripts 
+
+1. sparql2nl.ipynb: This notebook contains the code to convert SPARQL queries to natural language. It uses the OpenAI API. 
+2. json2csv.ipynb: This notebook contains the code to convert all json file in the folder stored_data to a csv file (needs to be manually imported to the Google sheet)

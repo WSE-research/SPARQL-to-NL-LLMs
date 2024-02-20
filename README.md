@@ -1,1 +1,0 @@
-# SPARQL-to-natural-language
