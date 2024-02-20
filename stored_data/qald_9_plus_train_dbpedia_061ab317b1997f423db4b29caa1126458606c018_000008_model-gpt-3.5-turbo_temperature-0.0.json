@@ -1,0 +1,13 @@
+{
+    "id": "8",
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Air_China dbo:targetAirport ?uri }",
+    "sparql2nl": {
+        "en": "Which airport does Air China fly to?",
+        "original_en": "Which airports does Air China serve?",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-3.5-turbo",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Air_China dbo:targetAirport ?uri }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

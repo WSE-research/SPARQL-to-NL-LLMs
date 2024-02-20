@@ -1,0 +1,13 @@
+{
+    "id": "95",
+    "sparql": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Juliana_of_the_Netherlands> <http://dbpedia.org/property/burialPlace> ?uri . ?uri a <http://dbpedia.org/ontology/Settlement> }",
+    "sparql2nl": {
+        "en": "What are the distinct settlements where Juliana of the Netherlands is buried?",
+        "original_en": "In which city was the former Dutch queen Juliana buried?",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-4",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nSELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Juliana_of_the_Netherlands> <http://dbpedia.org/property/burialPlace> ?uri . ?uri a <http://dbpedia.org/ontology/Settlement> }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

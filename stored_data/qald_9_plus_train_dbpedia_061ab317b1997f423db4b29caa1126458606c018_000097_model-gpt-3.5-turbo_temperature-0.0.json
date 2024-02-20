@@ -1,0 +1,13 @@
+{
+    "id": "97",
+    "sparql": "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://dbpedia.org/ontology/Company> { ?uri <http://dbpedia.org/ontology/industry> <http://dbpedia.org/resource/Advertising> } UNION { ?uri <http://dbpedia.org/ontology/industry> ?industry FILTER regex(?industry, \"advertising\", \"i\") } }",
+    "sparql2nl": {
+        "en": "How many unique companies in the database are related to the advertising industry?",
+        "original_en": "Give me all companies in the advertising industry.",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-3.5-turbo",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nSELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://dbpedia.org/ontology/Company> { ?uri <http://dbpedia.org/ontology/industry> <http://dbpedia.org/resource/Advertising> } UNION { ?uri <http://dbpedia.org/ontology/industry> ?industry FILTER regex(?industry, \"advertising\", \"i\") } }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

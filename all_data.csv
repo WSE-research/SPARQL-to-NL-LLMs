@@ -1,0 +1,801 @@
+"id","model","sparql","prompt","en","original_en","datetime","temperature","prompt_hash"
+"14","gpt-3.5-turbo","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Weapon ; dbp:designer ?x . res:Uzi dbp:designer ?x FILTER ( ?uri != res:Uzi ) }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Weapon ; dbp:designer ?x . res:Uzi dbp:designer ?x FILTER ( ?uri != res:Uzi ) }
+","Which weapons were designed by the same person as the Uzi?","Which other weapons did the designer of the Uzi develop?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"97","gpt-4","SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://dbpedia.org/ontology/Company> { ?uri <http://dbpedia.org/ontology/industry> <http://dbpedia.org/resource/Advertising> } UNION { ?uri <http://dbpedia.org/ontology/industry> ?industry FILTER regex(?industry, ""advertising"", ""i"") } }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://dbpedia.org/ontology/Company> { ?uri <http://dbpedia.org/ontology/industry> <http://dbpedia.org/resource/Advertising> } UNION { ?uri <http://dbpedia.org/ontology/industry> ?industry FILTER regex(?industry, ""advertising"", ""i"") } }
+","How many unique companies are there in the advertising industry according to the DBpedia database?","Give me all companies in the advertising industry.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"52","gpt-4","SELECT DISTINCT ?x WHERE { ?uri <http://dbpedia.org/ontology/deathCause> ?x . } ORDER BY DESC(COUNT(DISTINCT ?uri)) OFFSET 0 LIMIT 1","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?x WHERE { ?uri <http://dbpedia.org/ontology/deathCause> ?x . } ORDER BY DESC(COUNT(DISTINCT ?uri)) OFFSET 0 LIMIT 1
+","What is the most common cause of death according to the DBpedia database?","What is the most frequent cause of death?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"53","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/birthDate> ?date ; <http://dbpedia.org/property/highlights> ?h FILTER regex(?h, ""MVP"") } ORDER BY DESC(?date) OFFSET 0 LIMIT 4","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/birthDate> ?date ; <http://dbpedia.org/property/highlights> ?h FILTER regex(?h, ""MVP"") } ORDER BY DESC(?date) OFFSET 0 LIMIT 4
+","Which basketball players have won the MVP award and were born most recently?","Who are the four youngest MVP basketball players?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"19","gpt-3.5-turbo","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Captain_America dbo:creator ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Captain_America dbo:creator ?uri }
+","Which person or entity created Captain America?","Who created the comic Captain America?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"38","gpt-4","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Hillel_Slovak> <http://dbpedia.org/ontology/deathPlace> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Hillel_Slovak> <http://dbpedia.org/ontology/deathPlace> ?uri }
+","Where did Hillel Slovak die?","Where did Hillel Slovak die?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"17","gpt-4","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Monarch ; dbo:spouse ?spouse { ?spouse dbo:birthPlace res:Germany } UNION { ?spouse dbo:birthPlace ?p . ?p dbo:country res:Germany } }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Monarch ; dbo:spouse ?spouse { ?spouse dbo:birthPlace res:Germany } UNION { ?spouse dbo:birthPlace ?p . ?p dbo:country res:Germany } }
+","Who are the monarchs that have a spouse born in Germany or in a place that is part of Germany?","Which monarchs were married to a German?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"70","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Elizabeth_Taylor> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Richard_Burton> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Elizabeth_Taylor> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Richard_Burton> }
+","Which films starred both Elizabeth Taylor and Richard Burton?","Which movies star both Liz Taylor and Richard Burton?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"87","gpt-4","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Goofy> <http://dbpedia.org/ontology/creator> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Goofy> <http://dbpedia.org/ontology/creator> ?uri }
+","Who is the creator of Goofy?","Who created Goofy?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"66","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Wyoming> <http://dbpedia.org/property/governor> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Wyoming> <http://dbpedia.org/property/governor> ?uri }
+","Which individual holds the position of governor for the state of Wyoming according to DBpedia?","Who is the governor of Wyoming?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"11","gpt-3.5-turbo","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:country res:Denmark }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:country res:Denmark }
+","Which movies are from Denmark?","Give me all Danish films.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"93","gpt-3.5-turbo","SELECT DISTINCT ?ni WHERE { <http://dbpedia.org/resource/Apple_Inc.> <http://dbpedia.org/ontology/netIncome> ?ni }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?ni WHERE { <http://dbpedia.org/resource/Apple_Inc.> <http://dbpedia.org/ontology/netIncome> ?ni }
+","What is the net income of Apple Inc.?","What is the net income of Apple?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"79","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Person> { ?uri <http://dbpedia.org/ontology/birthDate> ?date } UNION { ?uri <http://dbpedia.org/property/birthDate> ?date } <http://dbpedia.org/resource/Halloween> <http://dbpedia.org/property/date> ?date }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Person> { ?uri <http://dbpedia.org/ontology/birthDate> ?date } UNION { ?uri <http://dbpedia.org/property/birthDate> ?date } <http://dbpedia.org/resource/Halloween> <http://dbpedia.org/property/date> ?date }
+","Who are the people that were born on Halloween according to the DBpedia database?","Show me everyone who was born on Halloween.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"26","gpt-3.5-turbo","PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:WikicatStatesOfTheUnitedStates ; dbp:mineral ?mineral FILTER regex(?mineral, ""gold"", ""i"") }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:WikicatStatesOfTheUnitedStates ; dbp:mineral ?mineral FILTER regex(?mineral, ""gold"", ""i"") }
+","Which states of the United States have a mineral property that includes the word ""gold""?","Which U.S. states possess gold minerals?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"81","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Himalayas> <http://dbpedia.org/ontology/country> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Himalayas> <http://dbpedia.org/ontology/country> ?uri }
+","What countries are the Himalayas located in?","To which countries does the Himalayan mountain system extend?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"60","gpt-4","SELECT DISTINCT ?num WHERE { <http://dbpedia.org/resource/Maribor> <http://dbpedia.org/ontology/populationTotal> ?num }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?num WHERE { <http://dbpedia.org/resource/Maribor> <http://dbpedia.org/ontology/populationTotal> ?num }
+","What is the total population of Maribor?","How many inhabitants does Maribor have?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"51","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Denmark> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Denmark> }
+","Can you list all the unique films that were produced in Denmark?","Give me all Danish movies.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"30","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Cave> ; <http://dbpedia.org/property/entranceCount> ?entrance FILTER ( ?entrance > 3 ) }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Cave> ; <http://dbpedia.org/property/entranceCount> ?entrance FILTER ( ?entrance > 3 ) }
+","Can you provide a list of caves that have more than three entrances?","Which caves have more than 3 entrances?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"25","gpt-4","PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Utah dbp:timezone ?x . ?uri rdf:type yago:WikicatStatesOfTheUnitedStates ; dbp:timezone ?x FILTER ( ?uri != res:Utah ) }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Utah dbp:timezone ?x . ?uri rdf:type yago:WikicatStatesOfTheUnitedStates ; dbp:timezone ?x FILTER ( ?uri != res:Utah ) }
+","What are the states in the United States that are in the same timezone as Utah, excluding Utah itself?","Which U.S. states are in the same timezone as Utah?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"29","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Museum> ; <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/London> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Museum> ; <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/London> }
+","Which museums are located in London according to DBpedia?","Show me all museums in London.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"56","gpt-4","SELECT COUNT(DISTINCT ?uri AS ?uri) WHERE { ?uri <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Park_Chan-wook> . }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT COUNT(DISTINCT ?uri AS ?uri) WHERE { ?uri <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Park_Chan-wook> . }
+","How many unique entities are directed by Park Chan-wook?","How many movies did Park Chan-wook direct?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"95","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Juliana_of_the_Netherlands> <http://dbpedia.org/property/burialPlace> ?uri . ?uri a <http://dbpedia.org/ontology/Settlement> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Juliana_of_the_Netherlands> <http://dbpedia.org/property/burialPlace> ?uri . ?uri a <http://dbpedia.org/ontology/Settlement> }
+","What is the name of the settlement where Juliana of the Netherlands is buried?","In which city was the former Dutch queen Juliana buried?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"42","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/type> <http://dbpedia.org/resource/Nonprofit_organization> { ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Switzerland> } UNION { ?uri <http://dbpedia.org/ontology/location> ?x . ?x <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Switzerland> } }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/type> <http://dbpedia.org/resource/Nonprofit_organization> { ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Switzerland> } UNION { ?uri <http://dbpedia.org/ontology/location> ?x . ?x <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Switzerland> } }
+","Which unique URIs represent nonprofit organizations located in Switzerland or have a location in Switzerland according to DBpedia?","Give me all Swiss non-profit organizations.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"71","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/type> <http://dbpedia.org/resource/Nonprofit_organization> { ?uri <http://dbpedia.org/ontology/locationCountry> <http://dbpedia.org/resource/Australia> } UNION { ?uri <http://dbpedia.org/ontology/location> ?x . ?x <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Australia> } }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/type> <http://dbpedia.org/resource/Nonprofit_organization> { ?uri <http://dbpedia.org/ontology/locationCountry> <http://dbpedia.org/resource/Australia> } UNION { ?uri <http://dbpedia.org/ontology/location> ?x . ?x <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Australia> } }
+","Which unique URIs represent nonprofit organizations located in Australia or have a location in Australia according to DBpedia?","Give me all Australian nonprofit organizations.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"49","gpt-3.5-turbo","SELECT DISTINCT ?string WHERE { <http://dbpedia.org/resource/University_of_Oxford> <http://dbpedia.org/ontology/officialSchoolColour> ?string }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?string WHERE { <http://dbpedia.org/resource/University_of_Oxford> <http://dbpedia.org/ontology/officialSchoolColour> ?string }
+","What is the official school color of the University of Oxford?","What is the official color of the University of Oxford?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"94","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Holiday> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Sweden> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Holiday> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Sweden> }
+","What are the unique holidays that are celebrated in Sweden?","Give me all Swedish holidays.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"19","gpt-4","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Captain_America dbo:creator ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Captain_America dbo:creator ?uri }
+","Who is the creator of Captain America?","Who created the comic Captain America?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"28","gpt-4","PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?n WHERE { <http://dbpedia.org/resource/Lake_Placid_(Texas)> dbo:maximumDepth ?n }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?n WHERE { <http://dbpedia.org/resource/Lake_Placid_(Texas)> dbo:maximumDepth ?n }
+","What is the maximum depth of Lake Placid in Texas?","How deep is Lake Placid?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"66","gpt-4","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Wyoming> <http://dbpedia.org/property/governor> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Wyoming> <http://dbpedia.org/property/governor> ?uri }
+","Who is the governor of Wyoming?","Who is the governor of Wyoming?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"63","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Julia_Roberts> ; <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Garry_Marshall> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Julia_Roberts> ; <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Garry_Marshall> }
+","Can you list all the unique films where Julia Roberts starred and which were directed by Garry Marshall?","In which films directed by Garry Marshall was Julia Roberts starring?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"40","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Swimmer> ; <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Moscow> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Swimmer> ; <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Moscow> }
+","Can you list the unique swimmers who were born in Moscow?","Give all swimmers that were born in Moscow.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"62","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Company> { ?uri <http://dbpedia.org/ontology/numberOfEmployees> ?n } UNION { ?uri <http://dbpedia.org/property/numEmployees> ?n } FILTER ( ?n > 1000000 ) }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Company> { ?uri <http://dbpedia.org/ontology/numberOfEmployees> ?n } UNION { ?uri <http://dbpedia.org/property/numEmployees> ?n } FILTER ( ?n > 1000000 ) }
+","Which companies have more than 1,000,000 employees according to DBpedia?","Which companies have more than 1 million employees?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"97","gpt-3.5-turbo","SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://dbpedia.org/ontology/Company> { ?uri <http://dbpedia.org/ontology/industry> <http://dbpedia.org/resource/Advertising> } UNION { ?uri <http://dbpedia.org/ontology/industry> ?industry FILTER regex(?industry, ""advertising"", ""i"") } }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://dbpedia.org/ontology/Company> { ?uri <http://dbpedia.org/ontology/industry> <http://dbpedia.org/resource/Advertising> } UNION { ?uri <http://dbpedia.org/ontology/industry> ?industry FILTER regex(?industry, ""advertising"", ""i"") } }
+","How many unique companies in the database are related to the advertising industry?","Give me all companies in the advertising industry.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"75","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Rolls-Royce_Motors> <http://dbpedia.org/ontology/owner> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Rolls-Royce_Motors> <http://dbpedia.org/ontology/owner> ?uri }
+","Which entities own Rolls-Royce Motors according to DBpedia?","Who is the owner of Rolls-Royce?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"65","gpt-4","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Ural_Mountains> <http://dbpedia.org/property/highest> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Ural_Mountains> <http://dbpedia.org/property/highest> ?uri }
+","What is the highest point of the Ural Mountains?","What is the highest place of the Urals?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"62","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Company> { ?uri <http://dbpedia.org/ontology/numberOfEmployees> ?n } UNION { ?uri <http://dbpedia.org/property/numEmployees> ?n } FILTER ( ?n > 1000000 ) }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Company> { ?uri <http://dbpedia.org/ontology/numberOfEmployees> ?n } UNION { ?uri <http://dbpedia.org/property/numEmployees> ?n } FILTER ( ?n > 1000000 ) }
+","Can you provide a list of unique companies that have more than a million employees?","Which companies have more than 1 million employees?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"54","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Company> { ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Munich> } UNION { ?uri <http://dbpedia.org/ontology/headquarter> <http://dbpedia.org/resource/Munich> } UNION { ?uri <http://dbpedia.org/ontology/locationCity> <http://dbpedia.org/resource/Munich> } }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Company> { ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Munich> } UNION { ?uri <http://dbpedia.org/ontology/headquarter> <http://dbpedia.org/resource/Munich> } UNION { ?uri <http://dbpedia.org/ontology/locationCity> <http://dbpedia.org/resource/Munich> } }
+","Which companies are located in Munich or have their headquarters in Munich?","Give me all companies in Munich.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"77","gpt-4","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/John_F._Kennedy> <http://dbpedia.org/ontology/deathPlace> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/John_F._Kennedy> <http://dbpedia.org/ontology/deathPlace> ?uri }
+","Where did John F. Kennedy die?","Where was JFK assassinated?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"27","gpt-3.5-turbo","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Ingrid_Bergman dbo:child ?child . ?child <http://dbpedia.org/property/spouse> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Ingrid_Bergman dbo:child ?child . ?child <http://dbpedia.org/property/spouse> ?uri }
+","Which spouses of Ingrid Bergman's children are included in the database?","Who is the daughter of Ingrid Bergman married to?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"36","gpt-4","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Illinois> <http://dbpedia.org/property/borderingstates> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Illinois> <http://dbpedia.org/property/borderingstates> ?uri }
+","Which states border Illinois?","Which states border Illinois?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"35","gpt-4","SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Statue_of_Liberty> <http://dbpedia.org/property/beginningDate> ?date }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Statue_of_Liberty> <http://dbpedia.org/property/beginningDate> ?date }
+","What is the beginning date of the Statue of Liberty?","When was the Statue of Liberty built?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"41","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Astronaut> { ?uri <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/Russia> } UNION { ?uri <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/Soviet_Union> } }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Astronaut> { ?uri <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/Russia> } UNION { ?uri <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/Soviet_Union> } }
+","Which astronauts are either from Russia or the Soviet Union?","Give me all cosmonauts.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"2","gpt-4","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:Skype dbo:developer ?uri. }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:Skype dbo:developer ?uri. }
+","Who is the developer of Skype?","Who developed Skype?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"45","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Boston_Red_Sox> <http://dbpedia.org/property/ballpark> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Boston_Red_Sox> <http://dbpedia.org/property/ballpark> ?uri }
+","What is the name of the ballpark where the Boston Red Sox play their games?","Where do the Red Sox play?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"91","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/TelevisionShow> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Neil_Patrick_Harris> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/TelevisionShow> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Neil_Patrick_Harris> }
+","Can you list all the distinct television shows where Neil Patrick Harris is a star?","Give me all the TV shows with Neil Patrick Harris.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"16","gpt-4","PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:WikicatStatesOfTheUnitedStates ; dbp:densityrank ?rank } ORDER BY ASC(?rank) LIMIT 1","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:WikicatStatesOfTheUnitedStates ; dbp:densityrank ?rank } ORDER BY ASC(?rank) LIMIT 1
+","What is the least densely populated state in the United States?","Which state of the USA has the highest population density?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"47","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Volcano> ; <http://dbpedia.org/ontology/locatedInArea> <http://dbpedia.org/resource/Japan> ; <http://dbpedia.org/ontology/eruptionYear> ?date FILTER ( year(?date) >= 2000 ) }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Volcano> ; <http://dbpedia.org/ontology/locatedInArea> <http://dbpedia.org/resource/Japan> ; <http://dbpedia.org/ontology/eruptionYear> ?date FILTER ( year(?date) >= 2000 ) }
+","Can you list all the distinct volcanoes located in Japan that have erupted since the year 2000?","Which volcanos in Japan erupted since 2000?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"9","gpt-4","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { ?x dbo:director res:William_Shatner ; dbo:starring res:William_Shatner { ?x dbo:starring ?uri } UNION { ?x dbp:starring ?uri } }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { ?x dbo:director res:William_Shatner ; dbo:starring res:William_Shatner { ?x dbo:starring ?uri } UNION { ?x dbp:starring ?uri } }
+","Which actors have starred in movies directed by William Shatner, where William Shatner also had a role?","Give me all actors starring in movies directed by and starring William Shatner.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"18","gpt-3.5-turbo","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Organisation { ?uri dbo:formationYear ?date } UNION { ?uri dbo:foundingYear ?date } UNION { ?uri dbp:foundation ?date } UNION { ?uri dbp:formation ?date } FILTER regex(?date, ""^1950"") }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Organisation { ?uri dbo:formationYear ?date } UNION { ?uri dbo:foundingYear ?date } UNION { ?uri dbp:foundation ?date } UNION { ?uri dbp:formation ?date } FILTER regex(?date, ""^1950"") }
+","Which organizations were founded in the year 1950?","Which organizations were founded in 1950?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"20","gpt-4","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:mission res:Apollo_14 }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:mission res:Apollo_14 }
+","Which entities are associated with the Apollo 14 mission?","Give me the Apollo 14 astronauts.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"76","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Museum> ; <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Paris> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Museum> ; <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Paris> }
+","Which museums are located in Paris?","How many museums does Paris have?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"43","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/President> ; <http://dbpedia.org/ontology/birthDate> ?date FILTER regex(?date, ""^1945"") }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/President> ; <http://dbpedia.org/ontology/birthDate> ?date FILTER regex(?date, ""^1945"") }
+","Which presidents were born in the year 1945 according to DBpedia?","Which presidents were born in 1945?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"11","gpt-4","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:country res:Denmark }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:country res:Denmark }
+","Can you list all the films that were produced in Denmark?","Give me all Danish films.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"58","gpt-3.5-turbo","SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://dbpedia.org/ontology/Airline> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://dbpedia.org/ontology/Airline> }
+","How many different airlines are listed in the database?","How many airlines are there?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"34","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/height> ?n FILTER ( ?n > 2.0 ) }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/height> ?n FILTER ( ?n > 2.0 ) }
+","Which basketball players listed in DBpedia have a height greater than 2.0 meters?","Show me all basketball players that are higher than 2 meters.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"12","gpt-3.5-turbo","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Brad_Pitt ; dbo:director res:Guy_Ritchie }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Brad_Pitt ; dbo:director res:Guy_Ritchie }
+","Which movies star Brad Pitt and are directed by Guy Ritchie?","Which movies starring Brad Pitt were directed by Guy Ritchie?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"45","gpt-4","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Boston_Red_Sox> <http://dbpedia.org/property/ballpark> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Boston_Red_Sox> <http://dbpedia.org/property/ballpark> ?uri }
+","What is the ballpark associated with the Boston Red Sox?","Where do the Red Sox play?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"17","gpt-3.5-turbo","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Monarch ; dbo:spouse ?spouse { ?spouse dbo:birthPlace res:Germany } UNION { ?spouse dbo:birthPlace ?p . ?p dbo:country res:Germany } }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Monarch ; dbo:spouse ?spouse { ?spouse dbo:birthPlace res:Germany } UNION { ?spouse dbo:birthPlace ?p . ?p dbo:country res:Germany } }
+","Which monarchs have spouses who were born in Germany or whose spouses were born in a country that includes Germany?","Which monarchs were married to a German?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"74","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/title> <http://dbpedia.org/resource/President_of_Pakistan> ; <http://dbpedia.org/property/years> 1978 }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/title> <http://dbpedia.org/resource/President_of_Pakistan> ; <http://dbpedia.org/property/years> 1978 }
+","Which unique URIs correspond to individuals who held the title of President of Pakistan in the year 1978?","Who was president of Pakistan in 1978?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"65","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Ural_Mountains> <http://dbpedia.org/property/highest> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Ural_Mountains> <http://dbpedia.org/property/highest> ?uri }
+","What is the highest point of the Ural Mountains according to DBpedia?","What is the highest place of the Urals?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"75","gpt-4","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Rolls-Royce_Motors> <http://dbpedia.org/ontology/owner> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Rolls-Royce_Motors> <http://dbpedia.org/ontology/owner> ?uri }
+","Who owns Rolls-Royce Motors?","Who is the owner of Rolls-Royce?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"24","gpt-4","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:occupation res:Bandleader ; dbo:instrument res:Trumpet }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:occupation res:Bandleader ; dbo:instrument res:Trumpet }
+","Who are the bandleaders that also play the trumpet?","Give me a list of all trumpet players that were bandleaders.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"24","gpt-3.5-turbo","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:occupation res:Bandleader ; dbo:instrument res:Trumpet }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:occupation res:Bandleader ; dbo:instrument res:Trumpet }
+","Which bandleaders play the trumpet as their instrument?","Give me a list of all trumpet players that were bandleaders.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"38","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Hillel_Slovak> <http://dbpedia.org/ontology/deathPlace> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Hillel_Slovak> <http://dbpedia.org/ontology/deathPlace> ?uri }
+","What is the distinct location where Hillel Slovak passed away according to DBpedia?","Where did Hillel Slovak die?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"22","gpt-3.5-turbo","PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?uri WHERE { ?uri dbp:densityrank ?density } ORDER BY ASC(?density) LIMIT 1","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?uri WHERE { ?uri dbp:densityrank ?density } ORDER BY ASC(?density) LIMIT 1
+","What is the entity with the lowest density rank according to this dataset?","Which state of the United States of America has the highest density?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"56","gpt-3.5-turbo","SELECT COUNT(DISTINCT ?uri AS ?uri) WHERE { ?uri <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Park_Chan-wook> . }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT COUNT(DISTINCT ?uri AS ?uri) WHERE { ?uri <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Park_Chan-wook> . }
+","How many unique URIs are there for directors of movies directed by Park Chan-wook in the DBpedia database?","How many movies did Park Chan-wook direct?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"18","gpt-4","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Organisation { ?uri dbo:formationYear ?date } UNION { ?uri dbo:foundingYear ?date } UNION { ?uri dbp:foundation ?date } UNION { ?uri dbp:formation ?date } FILTER regex(?date, ""^1950"") }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Organisation { ?uri dbo:formationYear ?date } UNION { ?uri dbo:foundingYear ?date } UNION { ?uri dbp:foundation ?date } UNION { ?uri dbp:formation ?date } FILTER regex(?date, ""^1950"") }
+","Can you provide a list of organizations that were either formed or founded in the year 1950?","Which organizations were founded in 1950?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"81","gpt-4","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Himalayas> <http://dbpedia.org/ontology/country> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Himalayas> <http://dbpedia.org/ontology/country> ?uri }
+","Which countries do the Himalayas pass through?","To which countries does the Himalayan mountain system extend?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"48","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Bridge> ; <http://dbpedia.org/ontology/crosses> <http://dbpedia.org/resource/Seine> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Bridge> ; <http://dbpedia.org/ontology/crosses> <http://dbpedia.org/resource/Seine> }
+","Can you list all the unique bridges that cross the Seine?","Which bridges cross the Seine?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"8","gpt-3.5-turbo","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Air_China dbo:targetAirport ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Air_China dbo:targetAirport ?uri }
+","Which airport does Air China fly to?","Which airports does Air China serve?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"33","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Writer> ; <http://dbpedia.org/ontology/award> <http://dbpedia.org/resource/Nobel_Prize_in_Literature> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Writer> ; <http://dbpedia.org/ontology/award> <http://dbpedia.org/resource/Nobel_Prize_in_Literature> }
+","Which writers have won the Nobel Prize in Literature?","Give me all writers that won the Nobel Prize in literature.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"43","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/President> ; <http://dbpedia.org/ontology/birthDate> ?date FILTER regex(?date, ""^1945"") }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/President> ; <http://dbpedia.org/ontology/birthDate> ?date FILTER regex(?date, ""^1945"") }
+","Can you provide a list of all distinct presidents who were born in the year 1945?","Which presidents were born in 1945?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"29","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Museum> ; <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/London> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Museum> ; <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/London> }
+","Can you list all unique museums located in London?","Show me all museums in London.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"82","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Actor> { ?uri <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Germany> } UNION { ?uri <http://dbpedia.org/ontology/birthPlace> ?place . ?place <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Germany> } }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Actor> { ?uri <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Germany> } UNION { ?uri <http://dbpedia.org/ontology/birthPlace> ?place . ?place <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Germany> } }
+","Which actors were born in Germany or have a birthplace in Germany according to DBpedia?","Which actors were born in Germany?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"86","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Actor> ; <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Berlin> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Actor> ; <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Berlin> }
+","Can you list all the unique actors who were born in Berlin?","Give me all actors who were born in Berlin.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"60","gpt-3.5-turbo","SELECT DISTINCT ?num WHERE { <http://dbpedia.org/resource/Maribor> <http://dbpedia.org/ontology/populationTotal> ?num }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?num WHERE { <http://dbpedia.org/resource/Maribor> <http://dbpedia.org/ontology/populationTotal> ?num }
+","What is the total population of Maribor according to DBpedia?","How many inhabitants does Maribor have?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"48","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Bridge> ; <http://dbpedia.org/ontology/crosses> <http://dbpedia.org/resource/Seine> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Bridge> ; <http://dbpedia.org/ontology/crosses> <http://dbpedia.org/resource/Seine> }
+","Which bridges cross the Seine River according to DBpedia?","Which bridges cross the Seine?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"21","gpt-4","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:The_Pillars_of_the_Earth dbo:author ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:The_Pillars_of_the_Earth dbo:author ?uri }
+","Who is the author of ""The Pillars of the Earth""?","Who wrote the book The pillars of the Earth?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"59","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Island> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Japan> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Island> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Japan> }
+","Can you list all the unique islands that are part of Japan?","Give me all islands that belong to Japan.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"39","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Jesse_Eisenberg> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Jesse_Eisenberg> }
+","Can you list all the distinct films where Jesse Eisenberg is a star?","What movies does Jesse Eisenberg play in?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"6","gpt-4","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?cave rdf:type dbo:Cave ; dbo:location ?uri . ?uri rdf:type dbo:Country } GROUP BY ?uri HAVING ( COUNT(?cave) > 2 )","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?cave rdf:type dbo:Cave ; dbo:location ?uri . ?uri rdf:type dbo:Country } GROUP BY ?uri HAVING ( COUNT(?cave) > 2 )
+","Which countries have more than two caves?","Which countries have places with more than two caves?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"1","gpt-4","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT ?uri WHERE { ?uri dbo:publisher res:GMT_Games }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT ?uri WHERE { ?uri dbo:publisher res:GMT_Games }
+","Which entities have GMT Games as their publisher?","List all boardgames by GMT.","2024-02-20_16-25-16","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"69","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Actor> . ?uri <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Paris> . ?uri <http://dbpedia.org/ontology/birthDate> ?date . FILTER ( ?date >= xsd:dateTime('1950-12-31T00:00:00Z')) }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Actor> . ?uri <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Paris> . ?uri <http://dbpedia.org/ontology/birthDate> ?date . FILTER ( ?date >= xsd:dateTime('1950-12-31T00:00:00Z')) }
+","Can you provide a list of unique actors who were born in Paris after December 31, 1950?","Give me all actors who were born in Paris after 1950.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"83","gpt-3.5-turbo","SELECT DISTINCT ?carbs WHERE { <http://dbpedia.org/resource/Peanut_butter> <http://dbpedia.org/property/carbs> ?carbs }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?carbs WHERE { <http://dbpedia.org/resource/Peanut_butter> <http://dbpedia.org/property/carbs> ?carbs }
+","What is the amount of carbohydrates in peanut butter according to DBpedia?","How much carbs does peanut butter have?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"27","gpt-4","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Ingrid_Bergman dbo:child ?child . ?child <http://dbpedia.org/property/spouse> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Ingrid_Bergman dbo:child ?child . ?child <http://dbpedia.org/property/spouse> ?uri }
+","Who are the spouses of Ingrid Bergman's children?","Who is the daughter of Ingrid Bergman married to?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"13","gpt-3.5-turbo","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Bruce_Lee dbo:child ?child . ?child <http://dbpedia.org/property/children> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Bruce_Lee dbo:child ?child . ?child <http://dbpedia.org/property/children> ?uri }
+","Which children of Bruce Lee are listed in the database?","Give me the grandchildren of Bruce Lee.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"55","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Himalayas> <http://dbpedia.org/ontology/country> ?country . ?country <http://dbpedia.org/ontology/capital> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Himalayas> <http://dbpedia.org/ontology/country> ?country . ?country <http://dbpedia.org/ontology/capital> ?uri }
+","Which city is the capital of the country that the Himalayas belong to?","Give me the capitals of all countries that the Himalayas run through.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"78","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Person> { ?uri <http://dbpedia.org/ontology/office> ""Chancellor of Germany"" } UNION { ?uri <http://dbpedia.org/property/office> <http://dbpedia.org/resource/Chancellor_of_Germany> } }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Person> { ?uri <http://dbpedia.org/ontology/office> ""Chancellor of Germany"" } UNION { ?uri <http://dbpedia.org/property/office> <http://dbpedia.org/resource/Chancellor_of_Germany> } }
+","Which individuals are classified as a person in DBpedia and have held the position of Chancellor of Germany?","Give me all federal chancellors of Germany.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"85","gpt-3.5-turbo","SELECT DISTINCT ?num WHERE { <http://dbpedia.org/resource/Google> <http://dbpedia.org/ontology/numberOfEmployees> ?num }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?num WHERE { <http://dbpedia.org/resource/Google> <http://dbpedia.org/ontology/numberOfEmployees> ?num }
+","What is the number of employees working at Google according to DBpedia?","How many employees does Google have?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"32","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category:Action_role-playing_video_games> ; <http://dbpedia.org/property/ign> ?score } ORDER BY DESC(?score) LIMIT 10","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category:Action_role-playing_video_games> ; <http://dbpedia.org/property/ign> ?score } ORDER BY DESC(?score) LIMIT 10
+","Which video game titles fall under the category of action role-playing games and have been rated by IGN, with the top 10 highest scores?","What are the top-10 action role-playing video games according to IGN?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"74","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/title> <http://dbpedia.org/resource/President_of_Pakistan> ; <http://dbpedia.org/property/years> 1978 }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/title> <http://dbpedia.org/resource/President_of_Pakistan> ; <http://dbpedia.org/property/years> 1978 }
+","Who held the title of President of Pakistan in the year 1978?","Who was president of Pakistan in 1978?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"31","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/team> <http://dbpedia.org/resource/Atlanta_Falcons> ; <http://dbpedia.org/ontology/height> ?h } ORDER BY DESC(?h) OFFSET 0 LIMIT 1","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/team> <http://dbpedia.org/resource/Atlanta_Falcons> ; <http://dbpedia.org/ontology/height> ?h } ORDER BY DESC(?h) OFFSET 0 LIMIT 1
+","Which player from the Atlanta Falcons has the tallest height?","Who is the tallest player of the Atlanta Falcons?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"15","gpt-4","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Universal_Studios dbo:owner ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Universal_Studios dbo:owner ?uri }
+","Who is the owner of Universal Studios?","Who is the owner of Universal Studios?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"7","gpt-4","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:Abraham_Lincoln dbo:deathPlace ?uri. }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:Abraham_Lincoln dbo:deathPlace ?uri. }
+","Where did Abraham Lincoln die?","Where did Abraham Lincoln die?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"44","gpt-4","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Lou_Reed> <http://dbpedia.org/ontology/genre> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Lou_Reed> <http://dbpedia.org/ontology/genre> ?uri }
+","What are the different genres associated with Lou Reed?","What kind of music did Lou Reed play?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"61","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/mission> <http://dbpedia.org/resource/Apollo_14> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/mission> <http://dbpedia.org/resource/Apollo_14> }
+","Which unique URIs are associated with the mission of Apollo 14 in the DBpedia ontology?","Give me all Apollo 14 astronauts.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"41","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Astronaut> { ?uri <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/Russia> } UNION { ?uri <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/Soviet_Union> } }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Astronaut> { ?uri <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/Russia> } UNION { ?uri <http://dbpedia.org/ontology/nationality> <http://dbpedia.org/resource/Soviet_Union> } }
+","Can you provide a list of unique astronauts who are either from Russia or the Soviet Union?","Give me all cosmonauts.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"53","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/birthDate> ?date ; <http://dbpedia.org/property/highlights> ?h FILTER regex(?h, ""MVP"") } ORDER BY DESC(?date) OFFSET 0 LIMIT 4","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/birthDate> ?date ; <http://dbpedia.org/property/highlights> ?h FILTER regex(?h, ""MVP"") } ORDER BY DESC(?date) OFFSET 0 LIMIT 4
+","Can you name four of the most recent basketball players who have been recognized as ""MVP"" (Most Valuable Player) at some point in their career?","Who are the four youngest MVP basketball players?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"12","gpt-4","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Brad_Pitt ; dbo:director res:Guy_Ritchie }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film ; dbo:starring res:Brad_Pitt ; dbo:director res:Guy_Ritchie }
+","Can you list all the distinct films where Brad Pitt was a star and the director was Guy Ritchie?","Which movies starring Brad Pitt were directed by Guy Ritchie?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"23","gpt-4","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/launchPad> res:Baikonur_Cosmodrome }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/launchPad> res:Baikonur_Cosmodrome }
+","Which entities have been launched from the Baikonur Cosmodrome?","Which spaceflights were launched from Baikonur?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"10","gpt-3.5-turbo","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Philippines dbo:officialLanguage ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Philippines dbo:officialLanguage ?uri }
+","What is the official language of the Philippines according to DBpedia?","What are the official languages of the Philippines?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"3","gpt-4","PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX onto: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type onto:Person ; onto:birthPlace <http://dbpedia.org/resource/Heraklion>. }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX onto: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type onto:Person ; onto:birthPlace <http://dbpedia.org/resource/Heraklion>. }
+","Who are the people that were born in Heraklion?","Which people were born in Heraklion?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"83","gpt-4","SELECT DISTINCT ?carbs WHERE { <http://dbpedia.org/resource/Peanut_butter> <http://dbpedia.org/property/carbs> ?carbs }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?carbs WHERE { <http://dbpedia.org/resource/Peanut_butter> <http://dbpedia.org/property/carbs> ?carbs }
+","What is the carbohydrate content of peanut butter?","How much carbs does peanut butter have?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"80","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/type> <http://dbpedia.org/resource/Beer> ; <http://dbpedia.org/ontology/origin> <http://dbpedia.org/resource/Beer_in_Ireland> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/type> <http://dbpedia.org/resource/Beer> ; <http://dbpedia.org/ontology/origin> <http://dbpedia.org/resource/Beer_in_Ireland> }
+","Can you list the unique items that are classified as ""Beer"" and originate from ""Beer in Ireland""?","Which beer originated in Ireland?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"63","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Julia_Roberts> ; <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Garry_Marshall> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Julia_Roberts> ; <http://dbpedia.org/ontology/director> <http://dbpedia.org/resource/Garry_Marshall> }
+","Which movies star Julia Roberts and were directed by Garry Marshall?","In which films directed by Garry Marshall was Julia Roberts starring?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"25","gpt-3.5-turbo","PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Utah dbp:timezone ?x . ?uri rdf:type yago:WikicatStatesOfTheUnitedStates ; dbp:timezone ?x FILTER ( ?uri != res:Utah ) }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Utah dbp:timezone ?x . ?uri rdf:type yago:WikicatStatesOfTheUnitedStates ; dbp:timezone ?x FILTER ( ?uri != res:Utah ) }
+","Which states in the United States have the same timezone as Utah, excluding Utah itself?","Which U.S. states are in the same timezone as Utah?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"67","gpt-4","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Eiffel_Tower> <http://dbpedia.org/ontology/architect> ?x . ?x <http://dbpedia.org/property/almaMater> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Eiffel_Tower> <http://dbpedia.org/ontology/architect> ?x . ?x <http://dbpedia.org/property/almaMater> ?uri }
+","Who are the architects of the Eiffel Tower and where did they study?","Where did the architect of the Eiffel Tower study?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"30","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Cave> ; <http://dbpedia.org/property/entranceCount> ?entrance FILTER ( ?entrance > 3 ) }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Cave> ; <http://dbpedia.org/property/entranceCount> ?entrance FILTER ( ?entrance > 3 ) }
+","Which caves in DBpedia have more than 3 entrances?","Which caves have more than 3 entrances?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"55","gpt-4","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Himalayas> <http://dbpedia.org/ontology/country> ?country . ?country <http://dbpedia.org/ontology/capital> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Himalayas> <http://dbpedia.org/ontology/country> ?country . ?country <http://dbpedia.org/ontology/capital> ?uri }
+","What are the capitals of the countries that the Himalayas are located in?","Give me the capitals of all countries that the Himalayas run through.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"68","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/WorldHeritageSite> . { ?uri <http://dbpedia.org/property/year> '2013'^^xsd:integer . } UNION { ?uri <http://dbpedia.org/property/year> '2014'^^xsd:integer . } }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/WorldHeritageSite> . { ?uri <http://dbpedia.org/property/year> '2013'^^xsd:integer . } UNION { ?uri <http://dbpedia.org/property/year> '2014'^^xsd:integer . } }
+","Which unique URIs represent World Heritage Sites that were designated in either 2013 or 2014?","Give me all world heritage sites designated within the past two years.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"52","gpt-3.5-turbo","SELECT DISTINCT ?x WHERE { ?uri <http://dbpedia.org/ontology/deathCause> ?x . } ORDER BY DESC(COUNT(DISTINCT ?uri)) OFFSET 0 LIMIT 1","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?x WHERE { ?uri <http://dbpedia.org/ontology/deathCause> ?x . } ORDER BY DESC(COUNT(DISTINCT ?uri)) OFFSET 0 LIMIT 1
+","What is the most common cause of death among the entities in the dataset?","What is the most frequent cause of death?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"72","gpt-4","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Pope_John_Paul_II> <http://dbpedia.org/property/successor> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Pope_John_Paul_II> <http://dbpedia.org/property/successor> ?uri }
+","Who succeeded Pope John Paul II?","Which pope succeeded John Paul II?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"58","gpt-4","SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://dbpedia.org/ontology/Airline> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri a <http://dbpedia.org/ontology/Airline> }
+","How many unique airlines are there according to the DBpedia database?","How many airlines are there?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"67","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Eiffel_Tower> <http://dbpedia.org/ontology/architect> ?x . ?x <http://dbpedia.org/property/almaMater> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Eiffel_Tower> <http://dbpedia.org/ontology/architect> ?x . ?x <http://dbpedia.org/property/almaMater> ?uri }
+","What is the alma mater of the architect of the Eiffel Tower?","Where did the architect of the Eiffel Tower study?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"21","gpt-3.5-turbo","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:The_Pillars_of_the_Earth dbo:author ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:The_Pillars_of_the_Earth dbo:author ?uri }
+","Which author wrote the book ""The Pillars of the Earth""?","Who wrote the book The pillars of the Earth?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"37","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Minecraft> <http://dbpedia.org/ontology/developer> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Minecraft> <http://dbpedia.org/ontology/developer> ?uri }
+","Which developers worked on the video game Minecraft?","Who developed Minecraft?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"4","gpt-4","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:Area_51 dbo:location ?uri . ?uri dbo:country res:United_States. }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:Area_51 dbo:location ?uri . ?uri dbo:country res:United_States. }
+","What are the distinct locations within the United States that are associated with Area 51?","In which U.S. state is Area 51 located?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"76","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Museum> ; <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Paris> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Museum> ; <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Paris> }
+","Can you list all unique museums located in Paris?","How many museums does Paris have?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"98","gpt-4","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Washington_(state)> <http://dbpedia.org/property/largestmetro> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Washington_(state)> <http://dbpedia.org/property/largestmetro> ?uri }
+","What is the largest metropolitan area in the state of Washington?","What is the largest metropolitan area in Washington state?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"73","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Astronaut> ; <http://dbpedia.org/property/type> <http://dbpedia.org/resource/European_Space_Agency> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Astronaut> ; <http://dbpedia.org/property/type> <http://dbpedia.org/resource/European_Space_Agency> }
+","Can you list the unique astronauts who are associated with the European Space Agency?","Give me all ESA astronauts.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"32","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category:Action_role-playing_video_games> ; <http://dbpedia.org/property/ign> ?score } ORDER BY DESC(?score) LIMIT 10","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category:Action_role-playing_video_games> ; <http://dbpedia.org/property/ign> ?score } ORDER BY DESC(?score) LIMIT 10
+","Can you list the top 10 action role-playing video games based on their IGN scores?","What are the top-10 action role-playing video games according to IGN?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"34","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/height> ?n FILTER ( ?n > 2.0 ) }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/height> ?n FILTER ( ?n > 2.0 ) }
+","Can you provide a list of unique basketball players who are taller than 2.0 meters?","Show me all basketball players that are higher than 2 meters.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"71","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/type> <http://dbpedia.org/resource/Nonprofit_organization> { ?uri <http://dbpedia.org/ontology/locationCountry> <http://dbpedia.org/resource/Australia> } UNION { ?uri <http://dbpedia.org/ontology/location> ?x . ?x <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Australia> } }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/type> <http://dbpedia.org/resource/Nonprofit_organization> { ?uri <http://dbpedia.org/ontology/locationCountry> <http://dbpedia.org/resource/Australia> } UNION { ?uri <http://dbpedia.org/ontology/location> ?x . ?x <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Australia> } }
+","Can you list all the unique nonprofit organizations that are either based in Australia or have a location in Australia?","Give me all Australian nonprofit organizations.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"77","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/John_F._Kennedy> <http://dbpedia.org/ontology/deathPlace> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/John_F._Kennedy> <http://dbpedia.org/ontology/deathPlace> ?uri }
+","What is the location where John F. Kennedy passed away?","Where was JFK assassinated?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"15","gpt-3.5-turbo","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Universal_Studios dbo:owner ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Universal_Studios dbo:owner ?uri }
+","Which company owns Universal Studios?","Who is the owner of Universal Studios?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"4","gpt-3.5-turbo","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:Area_51 dbo:location ?uri . ?uri dbo:country res:United_States. }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:Area_51 dbo:location ?uri . ?uri dbo:country res:United_States. }
+","Which country is the location of Area 51 in?","In which U.S. state is Area 51 located?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"64","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/SoccerClub> ; <http://dbpedia.org/ontology/league> <http://dbpedia.org/resource/Premier_League> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/SoccerClub> ; <http://dbpedia.org/ontology/league> <http://dbpedia.org/resource/Premier_League> }
+","Which soccer clubs belong to the Premier League?","Give me all soccer clubs in the Premier League.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"89","gpt-4","SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Alberta> <http://dbpedia.org/property/admittancedate> ?date }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Alberta> <http://dbpedia.org/property/admittancedate> ?date }
+","What is the date when Alberta was admitted?","When was Alberta admitted as province?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"61","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/mission> <http://dbpedia.org/resource/Apollo_14> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/mission> <http://dbpedia.org/resource/Apollo_14> }
+","Which unique entities are associated with the mission Apollo 14?","Give me all Apollo 14 astronauts.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"51","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Denmark> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Denmark> }
+","Which movies from Denmark are in the database?","Give me all Danish movies.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"46","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/SoccerClub> ; <http://dbpedia.org/ontology/league> <http://dbpedia.org/resource/Bundesliga> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/SoccerClub> ; <http://dbpedia.org/ontology/league> <http://dbpedia.org/resource/Bundesliga> }
+","Can you list all the unique soccer clubs that are part of the Bundesliga league?","Show a list of soccer clubs that play in the Bundesliga.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"87","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Goofy> <http://dbpedia.org/ontology/creator> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Goofy> <http://dbpedia.org/ontology/creator> ?uri }
+","Which creator is associated with the character Goofy in the DBpedia database?","Who created Goofy?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"84","gpt-4","SELECT DISTINCT ?uri WHERE { ?film <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . ?film <http://dbpedia.org/ontology/producer> ?uri . } ORDER BY DESC(COUNT(?film)) OFFSET 0 LIMIT 1","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?film <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . ?film <http://dbpedia.org/ontology/producer> ?uri . } ORDER BY DESC(COUNT(?film)) OFFSET 0 LIMIT 1
+","Who is the producer who has produced the most number of films?","Who produced the most films?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"40","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Swimmer> ; <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Moscow> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Swimmer> ; <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Moscow> }
+","Which swimmers were born in Moscow according to DBpedia?","Give all swimmers that were born in Moscow.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"44","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Lou_Reed> <http://dbpedia.org/ontology/genre> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Lou_Reed> <http://dbpedia.org/ontology/genre> ?uri }
+","What genre is associated with Lou Reed on DBpedia?","What kind of music did Lou Reed play?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"36","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Illinois> <http://dbpedia.org/property/borderingstates> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Illinois> <http://dbpedia.org/property/borderingstates> ?uri }
+","Which states border Illinois?","Which states border Illinois?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"96","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Musical> ; <http://dbpedia.org/ontology/musicBy> <http://dbpedia.org/resource/Leonard_Bernstein> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Musical> ; <http://dbpedia.org/ontology/musicBy> <http://dbpedia.org/resource/Leonard_Bernstein> }
+","Which musical works are attributed to Leonard Bernstein in DBpedia?","List all the musicals with music by Leonard Bernstein.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"2","gpt-3.5-turbo","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:Skype dbo:developer ?uri. }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:Skype dbo:developer ?uri. }
+","Which developer is associated with Skype?","Who developed Skype?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"72","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Pope_John_Paul_II> <http://dbpedia.org/property/successor> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Pope_John_Paul_II> <http://dbpedia.org/property/successor> ?uri }
+","Which person succeeded Pope John Paul II according to DBpedia?","Which pope succeeded John Paul II?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"90","gpt-4","SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri <http://dbpedia.org/property/programme> <http://dbpedia.org/resource/Soyuz_programme> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri <http://dbpedia.org/property/programme> <http://dbpedia.org/resource/Soyuz_programme> }
+","How many unique items are associated with the Soyuz programme?","How many missions does the Soyuz programme have?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"9","gpt-3.5-turbo","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { ?x dbo:director res:William_Shatner ; dbo:starring res:William_Shatner { ?x dbo:starring ?uri } UNION { ?x dbp:starring ?uri } }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { ?x dbo:director res:William_Shatner ; dbo:starring res:William_Shatner { ?x dbo:starring ?uri } UNION { ?x dbp:starring ?uri } }
+","Which movies or TV shows have William Shatner directed or starred in?","Give me all actors starring in movies directed by and starring William Shatner.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"50","gpt-3.5-turbo","SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri <http://dbpedia.org/ontology/producer> <http://dbpedia.org/resource/Hal_Roach> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri <http://dbpedia.org/ontology/producer> <http://dbpedia.org/resource/Hal_Roach> }
+","How many unique URIs are associated with the producer ""Hal Roach"" in the DBpedia ontology?","How many films did Hal Roach produce?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"95","gpt-4","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Juliana_of_the_Netherlands> <http://dbpedia.org/property/burialPlace> ?uri . ?uri a <http://dbpedia.org/ontology/Settlement> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Juliana_of_the_Netherlands> <http://dbpedia.org/property/burialPlace> ?uri . ?uri a <http://dbpedia.org/ontology/Settlement> }
+","What are the distinct settlements where Juliana of the Netherlands is buried?","In which city was the former Dutch queen Juliana buried?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"98","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Washington_(state)> <http://dbpedia.org/property/largestmetro> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Washington_(state)> <http://dbpedia.org/property/largestmetro> ?uri }
+","What is the name of the largest metropolitan area in the state of Washington?","What is the largest metropolitan area in Washington state?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"10","gpt-4","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Philippines dbo:officialLanguage ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Philippines dbo:officialLanguage ?uri }
+","What are the official languages of the Philippines?","What are the official languages of the Philippines?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"20","gpt-3.5-turbo","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:mission res:Apollo_14 }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:mission res:Apollo_14 }
+","Which space mission is associated with the resource Apollo 14 in the DBpedia ontology?","Give me the Apollo 14 astronauts.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"69","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Actor> . ?uri <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Paris> . ?uri <http://dbpedia.org/ontology/birthDate> ?date . FILTER ( ?date >= xsd:dateTime('1950-12-31T00:00:00Z')) }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Actor> . ?uri <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Paris> . ?uri <http://dbpedia.org/ontology/birthDate> ?date . FILTER ( ?date >= xsd:dateTime('1950-12-31T00:00:00Z')) }
+","Which actors were born in Paris after December 31, 1950?","Give me all actors who were born in Paris after 1950.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"85","gpt-4","SELECT DISTINCT ?num WHERE { <http://dbpedia.org/resource/Google> <http://dbpedia.org/ontology/numberOfEmployees> ?num }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?num WHERE { <http://dbpedia.org/resource/Google> <http://dbpedia.org/ontology/numberOfEmployees> ?num }
+","What is the number of employees at Google?","How many employees does Google have?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"13","gpt-4","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Bruce_Lee dbo:child ?child . ?child <http://dbpedia.org/property/children> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Bruce_Lee dbo:child ?child . ?child <http://dbpedia.org/property/children> ?uri }
+","Who are the grandchildren of Bruce Lee?","Give me the grandchildren of Bruce Lee.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"80","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/type> <http://dbpedia.org/resource/Beer> ; <http://dbpedia.org/ontology/origin> <http://dbpedia.org/resource/Beer_in_Ireland> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/type> <http://dbpedia.org/resource/Beer> ; <http://dbpedia.org/ontology/origin> <http://dbpedia.org/resource/Beer_in_Ireland> }
+","Which unique URIs are associated with beers that have a type of ""Beer"" and originate from Ireland?","Which beer originated in Ireland?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"94","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Holiday> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Sweden> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Holiday> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Sweden> }
+","Which unique URIs represent holidays in Sweden according to DBpedia?","Give me all Swedish holidays.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"64","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/SoccerClub> ; <http://dbpedia.org/ontology/league> <http://dbpedia.org/resource/Premier_League> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/SoccerClub> ; <http://dbpedia.org/ontology/league> <http://dbpedia.org/resource/Premier_League> }
+","Can you list all the unique soccer clubs that are part of the Premier League?","Give me all soccer clubs in the Premier League.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"31","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/team> <http://dbpedia.org/resource/Atlanta_Falcons> ; <http://dbpedia.org/ontology/height> ?h } ORDER BY DESC(?h) OFFSET 0 LIMIT 1","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/team> <http://dbpedia.org/resource/Atlanta_Falcons> ; <http://dbpedia.org/ontology/height> ?h } ORDER BY DESC(?h) OFFSET 0 LIMIT 1
+","Who is the tallest person on the Atlanta Falcons team?","Who is the tallest player of the Atlanta Falcons?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"5","gpt-4","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:New_York_City dbo:leaderName ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:New_York_City dbo:leaderName ?uri }
+","Who are the leaders of New York City?","Who is the mayor of New York City?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"78","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Person> { ?uri <http://dbpedia.org/ontology/office> ""Chancellor of Germany"" } UNION { ?uri <http://dbpedia.org/property/office> <http://dbpedia.org/resource/Chancellor_of_Germany> } }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Person> { ?uri <http://dbpedia.org/ontology/office> ""Chancellor of Germany"" } UNION { ?uri <http://dbpedia.org/property/office> <http://dbpedia.org/resource/Chancellor_of_Germany> } }
+","Who are the individuals that have held the office of the Chancellor of Germany?","Give me all federal chancellors of Germany.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"47","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Volcano> ; <http://dbpedia.org/ontology/locatedInArea> <http://dbpedia.org/resource/Japan> ; <http://dbpedia.org/ontology/eruptionYear> ?date FILTER ( year(?date) >= 2000 ) }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Volcano> ; <http://dbpedia.org/ontology/locatedInArea> <http://dbpedia.org/resource/Japan> ; <http://dbpedia.org/ontology/eruptionYear> ?date FILTER ( year(?date) >= 2000 ) }
+","Which volcanoes located in Japan have had eruptions since the year 2000?","Which volcanos in Japan erupted since 2000?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"89","gpt-3.5-turbo","SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Alberta> <http://dbpedia.org/property/admittancedate> ?date }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Alberta> <http://dbpedia.org/property/admittancedate> ?date }
+","What is the admission date of Alberta?","When was Alberta admitted as province?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"26","gpt-4","PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:WikicatStatesOfTheUnitedStates ; dbp:mineral ?mineral FILTER regex(?mineral, ""gold"", ""i"") }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:WikicatStatesOfTheUnitedStates ; dbp:mineral ?mineral FILTER regex(?mineral, ""gold"", ""i"") }
+","Which US states have gold as one of their minerals?","Which U.S. states possess gold minerals?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"92","gpt-4","SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Hells_Angels> <http://dbpedia.org/property/founded> ?date }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Hells_Angels> <http://dbpedia.org/property/founded> ?date }
+","When was the Hells Angels motorcycle club founded?","When were the Hells Angels founded?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"88","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?single <http://dbpedia.org/ontology/album> ?uri ; <http://www.w3.org/2000/01/rdf-schema#label> ""Last Christmas""@en }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?single <http://dbpedia.org/ontology/album> ?uri ; <http://www.w3.org/2000/01/rdf-schema#label> ""Last Christmas""@en }
+","Which unique URIs represent albums that have the label ""Last Christmas"" in the database?","Which music albums contain the song Last Christmas?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"91","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/TelevisionShow> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Neil_Patrick_Harris> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/TelevisionShow> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Neil_Patrick_Harris> }
+","Which television shows feature Neil Patrick Harris as a star?","Give me all the TV shows with Neil Patrick Harris.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"33","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Writer> ; <http://dbpedia.org/ontology/award> <http://dbpedia.org/resource/Nobel_Prize_in_Literature> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Writer> ; <http://dbpedia.org/ontology/award> <http://dbpedia.org/resource/Nobel_Prize_in_Literature> }
+","Can you list all the unique writers who have won the Nobel Prize in Literature?","Give me all writers that won the Nobel Prize in literature.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"70","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Elizabeth_Taylor> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Richard_Burton> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Elizabeth_Taylor> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Richard_Burton> }
+","Which movies feature both Elizabeth Taylor and Richard Burton as starring actors?","Which movies star both Liz Taylor and Richard Burton?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"57","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/River> . ?x <http://dbpedia.org/ontology/inflow> ?uri ; a <http://dbpedia.org/ontology/Lake> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Germany> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/River> . ?x <http://dbpedia.org/ontology/inflow> ?uri ; a <http://dbpedia.org/ontology/Lake> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Germany> }
+","Can you list all the unique rivers that flow into lakes located in Germany?","Which rivers flow into a German lake?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"82","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Actor> { ?uri <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Germany> } UNION { ?uri <http://dbpedia.org/ontology/birthPlace> ?place . ?place <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Germany> } }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Actor> { ?uri <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Germany> } UNION { ?uri <http://dbpedia.org/ontology/birthPlace> ?place . ?place <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Germany> } }
+","Can you provide a list of unique actors who were either born in Germany or born in a place that is located in Germany?","Which actors were born in Germany?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"23","gpt-3.5-turbo","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/launchPad> res:Baikonur_Cosmodrome }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/launchPad> res:Baikonur_Cosmodrome }
+","Which space missions were launched from the Baikonur Cosmodrome?","Which spaceflights were launched from Baikonur?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"99","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Person> ; <http://dbpedia.org/property/conviction> <http://dbpedia.org/resource/Death_of_John_Lennon> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Person> ; <http://dbpedia.org/property/conviction> <http://dbpedia.org/resource/Death_of_John_Lennon> }
+","Which individuals are classified as a ""Person"" in DBpedia and have a connection to the event ""Death of John Lennon""?","Who killed John Lennon?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"49","gpt-4","SELECT DISTINCT ?string WHERE { <http://dbpedia.org/resource/University_of_Oxford> <http://dbpedia.org/ontology/officialSchoolColour> ?string }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?string WHERE { <http://dbpedia.org/resource/University_of_Oxford> <http://dbpedia.org/ontology/officialSchoolColour> ?string }
+","What is the official school color of the University of Oxford?","What is the official color of the University of Oxford?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"68","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/WorldHeritageSite> . { ?uri <http://dbpedia.org/property/year> '2013'^^xsd:integer . } UNION { ?uri <http://dbpedia.org/property/year> '2014'^^xsd:integer . } }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/WorldHeritageSite> . { ?uri <http://dbpedia.org/property/year> '2013'^^xsd:integer . } UNION { ?uri <http://dbpedia.org/property/year> '2014'^^xsd:integer . } }
+","Can you list all unique World Heritage Sites that were designated in either the year 2013 or 2014?","Give me all world heritage sites designated within the past two years.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"3","gpt-3.5-turbo","PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX onto: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type onto:Person ; onto:birthPlace <http://dbpedia.org/resource/Heraklion>. }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX onto: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type onto:Person ; onto:birthPlace <http://dbpedia.org/resource/Heraklion>. }
+","Which people were born in Heraklion?","Which people were born in Heraklion?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"92","gpt-3.5-turbo","SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Hells_Angels> <http://dbpedia.org/property/founded> ?date }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Hells_Angels> <http://dbpedia.org/property/founded> ?date }
+","What is the founding date of the Hells Angels?","When were the Hells Angels founded?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"96","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Musical> ; <http://dbpedia.org/ontology/musicBy> <http://dbpedia.org/resource/Leonard_Bernstein> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Musical> ; <http://dbpedia.org/ontology/musicBy> <http://dbpedia.org/resource/Leonard_Bernstein> }
+","Can you list all the distinct musicals that have music by Leonard Bernstein?","List all the musicals with music by Leonard Bernstein.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"100","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Writer> { ?uri <http://dbpedia.org/ontology/almaMater> ?x } UNION { ?uri <http://dbpedia.org/ontology/education> ?x } { ?x <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Istanbul> } UNION { ?x <http://dbpedia.org/property/city> <http://dbpedia.org/resource/Istanbul> } }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Writer> { ?uri <http://dbpedia.org/ontology/almaMater> ?x } UNION { ?uri <http://dbpedia.org/ontology/education> ?x } { ?x <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Istanbul> } UNION { ?x <http://dbpedia.org/property/city> <http://dbpedia.org/resource/Istanbul> } }
+","Which writers studied or were educated in Istanbul?","Which writers studied in Istanbul?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"37","gpt-4","SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Minecraft> <http://dbpedia.org/ontology/developer> ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Minecraft> <http://dbpedia.org/ontology/developer> ?uri }
+","Who is the developer of Minecraft?","Who developed Minecraft?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"14","gpt-4","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Weapon ; dbp:designer ?x . res:Uzi dbp:designer ?x FILTER ( ?uri != res:Uzi ) }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Weapon ; dbp:designer ?x . res:Uzi dbp:designer ?x FILTER ( ?uri != res:Uzi ) }
+","Who are the designers of weapons other than the Uzi?","Which other weapons did the designer of the Uzi develop?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"54","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Company> { ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Munich> } UNION { ?uri <http://dbpedia.org/ontology/headquarter> <http://dbpedia.org/resource/Munich> } UNION { ?uri <http://dbpedia.org/ontology/locationCity> <http://dbpedia.org/resource/Munich> } }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Company> { ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Munich> } UNION { ?uri <http://dbpedia.org/ontology/headquarter> <http://dbpedia.org/resource/Munich> } UNION { ?uri <http://dbpedia.org/ontology/locationCity> <http://dbpedia.org/resource/Munich> } }
+","Can you list all the unique companies that are located in Munich, have their headquarters in Munich, or have Munich as their city location?","Give me all companies in Munich.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"39","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Jesse_Eisenberg> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Jesse_Eisenberg> }
+","Which movies does Jesse Eisenberg star in?","What movies does Jesse Eisenberg play in?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"46","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/SoccerClub> ; <http://dbpedia.org/ontology/league> <http://dbpedia.org/resource/Bundesliga> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/SoccerClub> ; <http://dbpedia.org/ontology/league> <http://dbpedia.org/resource/Bundesliga> }
+","Which soccer clubs belong to the Bundesliga league according to DBpedia?","Show a list of soccer clubs that play in the Bundesliga.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"90","gpt-3.5-turbo","SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri <http://dbpedia.org/property/programme> <http://dbpedia.org/resource/Soyuz_programme> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri <http://dbpedia.org/property/programme> <http://dbpedia.org/resource/Soyuz_programme> }
+","How many unique URIs are associated with the Soyuz programme in the database?","How many missions does the Soyuz programme have?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"88","gpt-4","SELECT DISTINCT ?uri WHERE { ?single <http://dbpedia.org/ontology/album> ?uri ; <http://www.w3.org/2000/01/rdf-schema#label> ""Last Christmas""@en }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?single <http://dbpedia.org/ontology/album> ?uri ; <http://www.w3.org/2000/01/rdf-schema#label> ""Last Christmas""@en }
+","Can you provide the unique albums associated with the song ""Last Christmas""?","Which music albums contain the song Last Christmas?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"5","gpt-3.5-turbo","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:New_York_City dbo:leaderName ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:New_York_City dbo:leaderName ?uri }
+","What is the name of the leader of New York City according to DBpedia?","Who is the mayor of New York City?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"79","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Person> { ?uri <http://dbpedia.org/ontology/birthDate> ?date } UNION { ?uri <http://dbpedia.org/property/birthDate> ?date } <http://dbpedia.org/resource/Halloween> <http://dbpedia.org/property/date> ?date }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Person> { ?uri <http://dbpedia.org/ontology/birthDate> ?date } UNION { ?uri <http://dbpedia.org/property/birthDate> ?date } <http://dbpedia.org/resource/Halloween> <http://dbpedia.org/property/date> ?date }
+","Which people have a birth date that coincides with Halloween?","Show me everyone who was born on Halloween.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"28","gpt-3.5-turbo","PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?n WHERE { <http://dbpedia.org/resource/Lake_Placid_(Texas)> dbo:maximumDepth ?n }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?n WHERE { <http://dbpedia.org/resource/Lake_Placid_(Texas)> dbo:maximumDepth ?n }
+","What is the maximum depth of Lake Placid in Texas?","How deep is Lake Placid?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"50","gpt-4","SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri <http://dbpedia.org/ontology/producer> <http://dbpedia.org/resource/Hal_Roach> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri <http://dbpedia.org/ontology/producer> <http://dbpedia.org/resource/Hal_Roach> }
+","How many unique entities have been produced by Hal Roach?","How many films did Hal Roach produce?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"84","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?film <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . ?film <http://dbpedia.org/ontology/producer> ?uri . } ORDER BY DESC(COUNT(?film)) OFFSET 0 LIMIT 1","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?film <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film> . ?film <http://dbpedia.org/ontology/producer> ?uri . } ORDER BY DESC(COUNT(?film)) OFFSET 0 LIMIT 1
+","What is the URI of the producer who has produced the most number of films in the database?","Who produced the most films?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"57","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/River> . ?x <http://dbpedia.org/ontology/inflow> ?uri ; a <http://dbpedia.org/ontology/Lake> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Germany> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/River> . ?x <http://dbpedia.org/ontology/inflow> ?uri ; a <http://dbpedia.org/ontology/Lake> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Germany> }
+","Which rivers flow into lakes located in Germany?","Which rivers flow into a German lake?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"73","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Astronaut> ; <http://dbpedia.org/property/type> <http://dbpedia.org/resource/European_Space_Agency> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Astronaut> ; <http://dbpedia.org/property/type> <http://dbpedia.org/resource/European_Space_Agency> }
+","Which astronauts are associated with the European Space Agency?","Give me all ESA astronauts.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"1","gpt-3.5-turbo","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT ?uri WHERE { ?uri dbo:publisher res:GMT_Games }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT ?uri WHERE { ?uri dbo:publisher res:GMT_Games }
+","Which games are published by GMT Games?","List all boardgames by GMT.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"8","gpt-4","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Air_China dbo:targetAirport ?uri }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Air_China dbo:targetAirport ?uri }
+","What are the target airports for Air China?","Which airports does Air China serve?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"6","gpt-3.5-turbo","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?cave rdf:type dbo:Cave ; dbo:location ?uri . ?uri rdf:type dbo:Country } GROUP BY ?uri HAVING ( COUNT(?cave) > 2 )","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?cave rdf:type dbo:Cave ; dbo:location ?uri . ?uri rdf:type dbo:Country } GROUP BY ?uri HAVING ( COUNT(?cave) > 2 )
+","Which countries have more than two caves located within them?","Which countries have places with more than two caves?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"100","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Writer> { ?uri <http://dbpedia.org/ontology/almaMater> ?x } UNION { ?uri <http://dbpedia.org/ontology/education> ?x } { ?x <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Istanbul> } UNION { ?x <http://dbpedia.org/property/city> <http://dbpedia.org/resource/Istanbul> } }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Writer> { ?uri <http://dbpedia.org/ontology/almaMater> ?x } UNION { ?uri <http://dbpedia.org/ontology/education> ?x } { ?x <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Istanbul> } UNION { ?x <http://dbpedia.org/property/city> <http://dbpedia.org/resource/Istanbul> } }
+","Can you provide a list of unique writers who either studied or received their education in Istanbul?","Which writers studied in Istanbul?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"7","gpt-3.5-turbo","PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:Abraham_Lincoln dbo:deathPlace ?uri. }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:Abraham_Lincoln dbo:deathPlace ?uri. }
+","Which place was Abraham Lincoln when he died?","Where did Abraham Lincoln die?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"93","gpt-4","SELECT DISTINCT ?ni WHERE { <http://dbpedia.org/resource/Apple_Inc.> <http://dbpedia.org/ontology/netIncome> ?ni }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?ni WHERE { <http://dbpedia.org/resource/Apple_Inc.> <http://dbpedia.org/ontology/netIncome> ?ni }
+","What is the net income of Apple Inc.?","What is the net income of Apple?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"59","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Island> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Japan> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Island> ; <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Japan> }
+","Which islands are located in Japan according to DBpedia?","Give me all islands that belong to Japan.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"22","gpt-4","PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?uri WHERE { ?uri dbp:densityrank ?density } ORDER BY ASC(?density) LIMIT 1","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?uri WHERE { ?uri dbp:densityrank ?density } ORDER BY ASC(?density) LIMIT 1
+","What is the least densely populated place?","Which state of the United States of America has the highest density?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"16","gpt-3.5-turbo","PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:WikicatStatesOfTheUnitedStates ; dbp:densityrank ?rank } ORDER BY ASC(?rank) LIMIT 1","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:WikicatStatesOfTheUnitedStates ; dbp:densityrank ?rank } ORDER BY ASC(?rank) LIMIT 1
+","Which state of the United States has the lowest population density ranking?","Which state of the USA has the highest population density?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"86","gpt-3.5-turbo","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Actor> ; <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Berlin> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Actor> ; <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Berlin> }
+","Which actors were born in Berlin according to DBpedia?","Give me all actors who were born in Berlin.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"35","gpt-3.5-turbo","SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Statue_of_Liberty> <http://dbpedia.org/property/beginningDate> ?date }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Statue_of_Liberty> <http://dbpedia.org/property/beginningDate> ?date }
+","What is the beginning date of the Statue of Liberty?","When was the Statue of Liberty built?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"42","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/type> <http://dbpedia.org/resource/Nonprofit_organization> { ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Switzerland> } UNION { ?uri <http://dbpedia.org/ontology/location> ?x . ?x <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Switzerland> } }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/type> <http://dbpedia.org/resource/Nonprofit_organization> { ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Switzerland> } UNION { ?uri <http://dbpedia.org/ontology/location> ?x . ?x <http://dbpedia.org/ontology/country> <http://dbpedia.org/resource/Switzerland> } }
+","Can you provide a list of unique nonprofit organizations that are either located in Switzerland or have a location in a place that is part of Switzerland?","Give me all Swiss non-profit organizations.","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"
+"99","gpt-4","SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Person> ; <http://dbpedia.org/property/conviction> <http://dbpedia.org/resource/Death_of_John_Lennon> }","Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. 
+Use the English language. SPARQL query: 
+SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Person> ; <http://dbpedia.org/property/conviction> <http://dbpedia.org/resource/Death_of_John_Lennon> }
+","Can you provide a list of unique individuals who were convicted in relation to the death of John Lennon?","Who killed John Lennon?","2024-02-20_16-28-04","0.0","061ab317b1997f423db4b29caa1126458606c018"

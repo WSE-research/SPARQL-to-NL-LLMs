@@ -1,0 +1,13 @@
+{
+    "id": "49",
+    "sparql": "SELECT DISTINCT ?string WHERE { <http://dbpedia.org/resource/University_of_Oxford> <http://dbpedia.org/ontology/officialSchoolColour> ?string }",
+    "sparql2nl": {
+        "en": "What is the official school color of the University of Oxford?",
+        "original_en": "What is the official color of the University of Oxford?",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-3.5-turbo",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nSELECT DISTINCT ?string WHERE { <http://dbpedia.org/resource/University_of_Oxford> <http://dbpedia.org/ontology/officialSchoolColour> ?string }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

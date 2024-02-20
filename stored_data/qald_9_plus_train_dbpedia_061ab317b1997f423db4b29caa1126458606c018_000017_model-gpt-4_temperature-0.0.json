@@ -1,0 +1,13 @@
+{
+    "id": "17",
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Monarch ; dbo:spouse ?spouse { ?spouse dbo:birthPlace res:Germany } UNION { ?spouse dbo:birthPlace ?p . ?p dbo:country res:Germany } }",
+    "sparql2nl": {
+        "en": "Who are the monarchs that have a spouse born in Germany or in a place that is part of Germany?",
+        "original_en": "Which monarchs were married to a German?",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-4",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Monarch ; dbo:spouse ?spouse { ?spouse dbo:birthPlace res:Germany } UNION { ?spouse dbo:birthPlace ?p . ?p dbo:country res:Germany } }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

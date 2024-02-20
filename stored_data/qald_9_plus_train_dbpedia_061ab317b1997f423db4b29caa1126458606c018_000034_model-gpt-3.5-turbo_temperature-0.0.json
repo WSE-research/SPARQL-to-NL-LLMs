@@ -1,0 +1,13 @@
+{
+    "id": "34",
+    "sparql": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/height> ?n FILTER ( ?n > 2.0 ) }",
+    "sparql2nl": {
+        "en": "Which basketball players listed in DBpedia have a height greater than 2.0 meters?",
+        "original_en": "Show me all basketball players that are higher than 2 meters.",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-3.5-turbo",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nSELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/height> ?n FILTER ( ?n > 2.0 ) }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

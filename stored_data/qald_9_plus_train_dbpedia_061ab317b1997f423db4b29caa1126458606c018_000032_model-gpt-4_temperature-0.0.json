@@ -1,0 +1,13 @@
+{
+    "id": "32",
+    "sparql": "SELECT DISTINCT ?uri WHERE { ?uri <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category:Action_role-playing_video_games> ; <http://dbpedia.org/property/ign> ?score } ORDER BY DESC(?score) LIMIT 10",
+    "sparql2nl": {
+        "en": "Can you list the top 10 action role-playing video games based on their IGN scores?",
+        "original_en": "What are the top-10 action role-playing video games according to IGN?",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-4",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nSELECT DISTINCT ?uri WHERE { ?uri <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category:Action_role-playing_video_games> ; <http://dbpedia.org/property/ign> ?score } ORDER BY DESC(?score) LIMIT 10\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

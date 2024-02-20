@@ -1,0 +1,13 @@
+{
+    "id": "91",
+    "sparql": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/TelevisionShow> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Neil_Patrick_Harris> }",
+    "sparql2nl": {
+        "en": "Can you list all the distinct television shows where Neil Patrick Harris is a star?",
+        "original_en": "Give me all the TV shows with Neil Patrick Harris.",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-4",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nSELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/TelevisionShow> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Neil_Patrick_Harris> }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "id": "92",
+    "sparql": "SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Hells_Angels> <http://dbpedia.org/property/founded> ?date }",
+    "sparql2nl": {
+        "en": "When was the Hells Angels motorcycle club founded?",
+        "original_en": "When were the Hells Angels founded?",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-4",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nSELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Hells_Angels> <http://dbpedia.org/property/founded> ?date }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

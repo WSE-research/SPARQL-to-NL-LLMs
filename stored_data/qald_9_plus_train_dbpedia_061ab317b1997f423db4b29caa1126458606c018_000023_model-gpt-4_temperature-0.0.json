@@ -1,0 +1,13 @@
+{
+    "id": "23",
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/launchPad> res:Baikonur_Cosmodrome }",
+    "sparql2nl": {
+        "en": "Which entities have been launched from the Baikonur Cosmodrome?",
+        "original_en": "Which spaceflights were launched from Baikonur?",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-4",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/launchPad> res:Baikonur_Cosmodrome }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

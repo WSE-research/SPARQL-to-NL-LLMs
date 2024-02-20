@@ -1,0 +1,13 @@
+{
+    "id": "61",
+    "sparql": "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/mission> <http://dbpedia.org/resource/Apollo_14> }",
+    "sparql2nl": {
+        "en": "Which unique entities are associated with the mission Apollo 14?",
+        "original_en": "Give me all Apollo 14 astronauts.",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-4",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nSELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/mission> <http://dbpedia.org/resource/Apollo_14> }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

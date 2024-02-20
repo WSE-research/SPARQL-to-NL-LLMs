@@ -1,0 +1,13 @@
+{
+    "id": "80",
+    "sparql": "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/type> <http://dbpedia.org/resource/Beer> ; <http://dbpedia.org/ontology/origin> <http://dbpedia.org/resource/Beer_in_Ireland> }",
+    "sparql2nl": {
+        "en": "Can you list the unique items that are classified as \"Beer\" and originate from \"Beer in Ireland\"?",
+        "original_en": "Which beer originated in Ireland?",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-4",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nSELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/type> <http://dbpedia.org/resource/Beer> ; <http://dbpedia.org/ontology/origin> <http://dbpedia.org/resource/Beer_in_Ireland> }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

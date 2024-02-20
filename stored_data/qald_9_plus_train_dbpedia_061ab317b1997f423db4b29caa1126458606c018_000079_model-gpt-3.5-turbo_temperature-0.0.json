@@ -1,0 +1,13 @@
+{
+    "id": "79",
+    "sparql": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Person> { ?uri <http://dbpedia.org/ontology/birthDate> ?date } UNION { ?uri <http://dbpedia.org/property/birthDate> ?date } <http://dbpedia.org/resource/Halloween> <http://dbpedia.org/property/date> ?date }",
+    "sparql2nl": {
+        "en": "Which people have a birth date that coincides with Halloween?",
+        "original_en": "Show me everyone who was born on Halloween.",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-3.5-turbo",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nSELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Person> { ?uri <http://dbpedia.org/ontology/birthDate> ?date } UNION { ?uri <http://dbpedia.org/property/birthDate> ?date } <http://dbpedia.org/resource/Halloween> <http://dbpedia.org/property/date> ?date }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

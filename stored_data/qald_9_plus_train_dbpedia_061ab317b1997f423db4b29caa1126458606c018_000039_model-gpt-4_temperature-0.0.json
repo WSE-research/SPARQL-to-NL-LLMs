@@ -1,0 +1,13 @@
+{
+    "id": "39",
+    "sparql": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Jesse_Eisenberg> }",
+    "sparql2nl": {
+        "en": "Can you list all the distinct films where Jesse Eisenberg is a star?",
+        "original_en": "What movies does Jesse Eisenberg play in?",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-4",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nSELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Film> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Jesse_Eisenberg> }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

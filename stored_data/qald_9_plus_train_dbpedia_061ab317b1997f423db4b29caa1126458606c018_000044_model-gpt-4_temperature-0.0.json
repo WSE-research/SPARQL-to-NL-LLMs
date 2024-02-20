@@ -1,0 +1,13 @@
+{
+    "id": "44",
+    "sparql": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Lou_Reed> <http://dbpedia.org/ontology/genre> ?uri }",
+    "sparql2nl": {
+        "en": "What are the different genres associated with Lou Reed?",
+        "original_en": "What kind of music did Lou Reed play?",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-4",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nSELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Lou_Reed> <http://dbpedia.org/ontology/genre> ?uri }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

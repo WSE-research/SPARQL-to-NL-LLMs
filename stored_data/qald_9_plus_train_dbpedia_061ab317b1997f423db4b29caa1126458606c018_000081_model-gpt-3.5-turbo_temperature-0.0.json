@@ -1,0 +1,13 @@
+{
+    "id": "81",
+    "sparql": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Himalayas> <http://dbpedia.org/ontology/country> ?uri }",
+    "sparql2nl": {
+        "en": "What countries are the Himalayas located in?",
+        "original_en": "To which countries does the Himalayan mountain system extend?",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-3.5-turbo",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nSELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Himalayas> <http://dbpedia.org/ontology/country> ?uri }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "id": "69",
+    "sparql": "SELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Actor> . ?uri <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Paris> . ?uri <http://dbpedia.org/ontology/birthDate> ?date . FILTER ( ?date >= xsd:dateTime('1950-12-31T00:00:00Z')) }",
+    "sparql2nl": {
+        "en": "Can you provide a list of unique actors who were born in Paris after December 31, 1950?",
+        "original_en": "Give me all actors who were born in Paris after 1950.",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-4",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nSELECT DISTINCT ?uri WHERE { ?uri <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Actor> . ?uri <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Paris> . ?uri <http://dbpedia.org/ontology/birthDate> ?date . FILTER ( ?date >= xsd:dateTime('1950-12-31T00:00:00Z')) }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

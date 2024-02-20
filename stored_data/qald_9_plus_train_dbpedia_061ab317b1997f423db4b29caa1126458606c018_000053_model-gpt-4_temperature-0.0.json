@@ -1,0 +1,13 @@
+{
+    "id": "53",
+    "sparql": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/birthDate> ?date ; <http://dbpedia.org/property/highlights> ?h FILTER regex(?h, \"MVP\") } ORDER BY DESC(?date) OFFSET 0 LIMIT 4",
+    "sparql2nl": {
+        "en": "Can you name four of the most recent basketball players who have been recognized as \"MVP\" (Most Valuable Player) at some point in their career?",
+        "original_en": "Who are the four youngest MVP basketball players?",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-4",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nSELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/BasketballPlayer> ; <http://dbpedia.org/ontology/birthDate> ?date ; <http://dbpedia.org/property/highlights> ?h FILTER regex(?h, \"MVP\") } ORDER BY DESC(?date) OFFSET 0 LIMIT 4\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "id": "98",
+    "sparql": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Washington_(state)> <http://dbpedia.org/property/largestmetro> ?uri }",
+    "sparql2nl": {
+        "en": "What is the largest metropolitan area in the state of Washington?",
+        "original_en": "What is the largest metropolitan area in Washington state?",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-4",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nSELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Washington_(state)> <http://dbpedia.org/property/largestmetro> ?uri }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

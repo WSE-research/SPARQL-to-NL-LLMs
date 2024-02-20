@@ -1,0 +1,13 @@
+{
+    "id": "40",
+    "sparql": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Swimmer> ; <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Moscow> }",
+    "sparql2nl": {
+        "en": "Can you list the unique swimmers who were born in Moscow?",
+        "original_en": "Give all swimmers that were born in Moscow.",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-4",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nSELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Swimmer> ; <http://dbpedia.org/ontology/birthPlace> <http://dbpedia.org/resource/Moscow> }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

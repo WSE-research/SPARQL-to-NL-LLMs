@@ -1,0 +1,13 @@
+{
+    "id": "89",
+    "sparql": "SELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Alberta> <http://dbpedia.org/property/admittancedate> ?date }",
+    "sparql2nl": {
+        "en": "What is the admission date of Alberta?",
+        "original_en": "When was Alberta admitted as province?",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-3.5-turbo",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nSELECT DISTINCT ?date WHERE { <http://dbpedia.org/resource/Alberta> <http://dbpedia.org/property/admittancedate> ?date }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

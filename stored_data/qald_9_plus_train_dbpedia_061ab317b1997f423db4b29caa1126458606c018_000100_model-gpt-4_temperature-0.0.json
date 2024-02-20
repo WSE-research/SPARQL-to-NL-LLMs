@@ -1,0 +1,13 @@
+{
+    "id": "100",
+    "sparql": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Writer> { ?uri <http://dbpedia.org/ontology/almaMater> ?x } UNION { ?uri <http://dbpedia.org/ontology/education> ?x } { ?x <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Istanbul> } UNION { ?x <http://dbpedia.org/property/city> <http://dbpedia.org/resource/Istanbul> } }",
+    "sparql2nl": {
+        "en": "Can you provide a list of unique writers who either studied or received their education in Istanbul?",
+        "original_en": "Which writers studied in Istanbul?",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-4",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nSELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Writer> { ?uri <http://dbpedia.org/ontology/almaMater> ?x } UNION { ?uri <http://dbpedia.org/ontology/education> ?x } { ?x <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Istanbul> } UNION { ?x <http://dbpedia.org/property/city> <http://dbpedia.org/resource/Istanbul> } }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

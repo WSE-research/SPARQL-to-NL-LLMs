@@ -1,0 +1,13 @@
+{
+    "id": "9",
+    "sparql": "PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { ?x dbo:director res:William_Shatner ; dbo:starring res:William_Shatner { ?x dbo:starring ?uri } UNION { ?x dbp:starring ?uri } }",
+    "sparql2nl": {
+        "en": "Which actors have starred in movies directed by William Shatner, where William Shatner also had a role?",
+        "original_en": "Give me all actors starring in movies directed by and starring William Shatner.",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-4",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nPREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { ?x dbo:director res:William_Shatner ; dbo:starring res:William_Shatner { ?x dbo:starring ?uri } UNION { ?x dbp:starring ?uri } }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

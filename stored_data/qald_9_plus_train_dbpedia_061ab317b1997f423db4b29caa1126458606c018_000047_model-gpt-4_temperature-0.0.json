@@ -1,0 +1,13 @@
+{
+    "id": "47",
+    "sparql": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Volcano> ; <http://dbpedia.org/ontology/locatedInArea> <http://dbpedia.org/resource/Japan> ; <http://dbpedia.org/ontology/eruptionYear> ?date FILTER ( year(?date) >= 2000 ) }",
+    "sparql2nl": {
+        "en": "Can you list all the distinct volcanoes located in Japan that have erupted since the year 2000?",
+        "original_en": "Which volcanos in Japan erupted since 2000?",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-4",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nSELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Volcano> ; <http://dbpedia.org/ontology/locatedInArea> <http://dbpedia.org/resource/Japan> ; <http://dbpedia.org/ontology/eruptionYear> ?date FILTER ( year(?date) >= 2000 ) }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

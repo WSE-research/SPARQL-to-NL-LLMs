@@ -1,0 +1,13 @@
+{
+    "id": "93",
+    "sparql": "SELECT DISTINCT ?ni WHERE { <http://dbpedia.org/resource/Apple_Inc.> <http://dbpedia.org/ontology/netIncome> ?ni }",
+    "sparql2nl": {
+        "en": "What is the net income of Apple Inc.?",
+        "original_en": "What is the net income of Apple?",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-4",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nSELECT DISTINCT ?ni WHERE { <http://dbpedia.org/resource/Apple_Inc.> <http://dbpedia.org/ontology/netIncome> ?ni }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

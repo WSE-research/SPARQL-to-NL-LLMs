@@ -1,0 +1,13 @@
+{
+    "id": "77",
+    "sparql": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/John_F._Kennedy> <http://dbpedia.org/ontology/deathPlace> ?uri }",
+    "sparql2nl": {
+        "en": "What is the location where John F. Kennedy passed away?",
+        "original_en": "Where was JFK assassinated?",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-3.5-turbo",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nSELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/John_F._Kennedy> <http://dbpedia.org/ontology/deathPlace> ?uri }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

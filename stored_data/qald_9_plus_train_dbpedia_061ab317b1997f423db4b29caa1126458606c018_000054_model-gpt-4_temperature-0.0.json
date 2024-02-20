@@ -1,0 +1,13 @@
+{
+    "id": "54",
+    "sparql": "SELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Company> { ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Munich> } UNION { ?uri <http://dbpedia.org/ontology/headquarter> <http://dbpedia.org/resource/Munich> } UNION { ?uri <http://dbpedia.org/ontology/locationCity> <http://dbpedia.org/resource/Munich> } }",
+    "sparql2nl": {
+        "en": "Can you list all the unique companies that are located in Munich, have their headquarters in Munich, or have Munich as their city location?",
+        "original_en": "Give me all companies in Munich.",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-4",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nSELECT DISTINCT ?uri WHERE { ?uri a <http://dbpedia.org/ontology/Company> { ?uri <http://dbpedia.org/ontology/location> <http://dbpedia.org/resource/Munich> } UNION { ?uri <http://dbpedia.org/ontology/headquarter> <http://dbpedia.org/resource/Munich> } UNION { ?uri <http://dbpedia.org/ontology/locationCity> <http://dbpedia.org/resource/Munich> } }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

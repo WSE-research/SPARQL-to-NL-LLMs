@@ -1,0 +1,13 @@
+{
+    "id": "70",
+    "sparql": "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Elizabeth_Taylor> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Richard_Burton> }",
+    "sparql2nl": {
+        "en": "Which films starred both Elizabeth Taylor and Richard Burton?",
+        "original_en": "Which movies star both Liz Taylor and Richard Burton?",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-4",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nSELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Elizabeth_Taylor> ; <http://dbpedia.org/ontology/starring> <http://dbpedia.org/resource/Richard_Burton> }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}

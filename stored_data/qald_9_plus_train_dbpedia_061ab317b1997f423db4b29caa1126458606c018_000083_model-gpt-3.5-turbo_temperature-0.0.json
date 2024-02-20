@@ -1,0 +1,13 @@
+{
+    "id": "83",
+    "sparql": "SELECT DISTINCT ?carbs WHERE { <http://dbpedia.org/resource/Peanut_butter> <http://dbpedia.org/property/carbs> ?carbs }",
+    "sparql2nl": {
+        "en": "What is the amount of carbohydrates in peanut butter according to DBpedia?",
+        "original_en": "How much carbs does peanut butter have?",
+        "datetime": "2024-02-20_16-28-04",
+        "temperature": 0.0,
+        "model": "gpt-3.5-turbo",
+        "prompt": "Assume you have to rephrase the following SPARQL query as a natural-language question for non-technical humans. \nUse the English language. SPARQL query: \nSELECT DISTINCT ?carbs WHERE { <http://dbpedia.org/resource/Peanut_butter> <http://dbpedia.org/property/carbs> ?carbs }\n",
+        "prompt_hash": "061ab317b1997f423db4b29caa1126458606c018"
+    }
+}
