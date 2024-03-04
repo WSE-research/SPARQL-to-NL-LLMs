@@ -1,0 +1,101 @@
+id	model	language	prompt_type	prompt	Generated	Gold Standard	Decision	
+71	gpt-3.5-turbo	en	ZERO_SHOT	Having a SPARQL query: SELECT ?s1 where  { ?s1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q389459> }    Where:  http://www.wikidata.org/prop/direct/P31 has human-readable name "instance of."  http://www.wikidata.org/entity/Q389459 has human-readable name "Mars rover."  Transform the SPARQL query to a natural language question. Output just the transformed question	Which subjects are instances of Mars rovers?	Give me all spacecrafts that flew to Mars.	No	?
+122	gpt-3.5-turbo	en	ZERO_SHOT	Having a SPARQL query:  SELECT ?o1 WHERE { <http://www.wikidata.org/entity/Q91>  <http://www.wikidata.org/prop/direct/P26>  ?o1 .  }   Where:  http://www.wikidata.org/entity/Q91 has human-readable name "Abraham Lincoln."  http://www.wikidata.org/prop/direct/P26 has human-readable name "spouse."  Transform the SPARQL query to a natural language question. Output just the transformed question	Who is the spouse of Abraham Lincoln?	Who was the wife of President Lincoln?	Yes	
+59	gpt-3.5-turbo	en	ZERO_SHOT	Having a SPARQL query: SELECT DISTINCT ?uri WHERE {  ?uri <http://www.wikidata.org/prop/direct/P522> <http://www.wikidata.org/entity/Q737809> . }   Where:  http://www.wikidata.org/prop/direct/P522 has human-readable name "type of orbit."  http://www.wikidata.org/entity/Q737809 has human-readable name "heliocentric orbit."  Transform the SPARQL query to a natural language question. Output just the transformed question	Which unique URIs represent entities that have a "heliocentric orbit" as their type of orbit?	Which space probes were sent into orbit around the sun?	No	
+212	gpt-3.5-turbo	en	ZERO_SHOT	Having a SPARQL query: PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE {  ?type wdt:P279* wd:Q4830453 . ?aerospace wdt:P279* wd:Q3477363 . ?healthcare wdt:P279* wd:Q15067276 . ?pharma wdt:P279* wd:Q507443 . ?uri wdt:P452 ?aerospace ; wdt:P452 ?healthcare . }   Where:  wdt:P279 has human-readable name "subclass of."  wd:Q4830453 has human-readable name "business."  wdt:P279 has human-readable name "subclass of."  wd:Q3477363 has human-readable name "aerospace manufacturer."  wdt:P279 has human-readable name "subclass of."  wd:Q15067276 has human-readable name "health care industry."  wdt:P279 has human-readable name "subclass of."  wd:Q507443 has human-readable name "pharmaceutical industry."  wdt:P452 has human-readable name "industry."  wdt:P452 has human-readable name "industry."  Transform the SPARQL query to a natural language question. Output just the transformed question	Which URIs correspond to entities that belong to both the aerospace manufacturer industry and the health care industry?	Which companies work in the aerospace industry as well as in medicine?	No	
+113	gpt-3.5-turbo	en	ZERO_SHOT	Having a SPARQL query:  SELECT ?s1 WHERE { ?s1  <http://www.wikidata.org/prop/direct/P17>  <http://www.wikidata.org/entity/Q183> .  ?s1 <http://www.wikidata.org/prop/direct/P31>  <http://www.wikidata.org/entity/Q515> .  ?s1  <http://www.wikidata.org/prop/direct/P1082>  ?o1 . FILTER ( ?o1 > "250000"^^<http://www.w3.org/2001/XMLSchema#integer>)}   Where:  http://www.wikidata.org/prop/direct/P17 has human-readable name "country."  http://www.wikidata.org/entity/Q183 has human-readable name "Germany."  http://www.wikidata.org/prop/direct/P31 has human-readable name "instance of."  http://www.wikidata.org/entity/Q515 has human-readable name "city."  http://www.wikidata.org/prop/direct/P1082 has human-readable name "population."  http://www.w3.org/2001/XMLSchema#integer has human-readable name "integer."  Transform the SPARQL query to a natural language question. Output just the transformed question	Which cities in Germany have a population greater than 250,000?	Which German cities have more than 250000 inhabitants?	Yes	
+148	gpt-3.5-turbo	en	ZERO_SHOT	Having a SPARQL query: PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q35657 . ?uri wdt:P2046 ?area . } ORDER BY DESC(?area) LIMIT 1   Where:  wdt:P31 has human-readable name "instance of."  wd:Q35657 has human-readable name "U.S. state."  wdt:P2046 has human-readable name "area."  Transform the SPARQL query to a natural language question. Output just the transformed question	What is the URI of the U.S. state with the largest area?	What is the largest state in the United States?	No	
+151	gpt-3.5-turbo	en	ZERO_SHOT	Having a SPARQL query: PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX pq: <http://www.wikidata.org/prop/qualifier/> PREFIX ps: <http://www.wikidata.org/prop/statement/> PREFIX p: <http://www.wikidata.org/prop/> SELECT ?res WHERE { ?res wdt:P175 wd:Q483407 . ?res p:P1433 _:a ._:a pq:P2868 wd:Q13432985 . }   Where:  wdt:P175 has human-readable name "performer."  wd:Q483407 has human-readable name "Ramones."  p:P1433 has human-readable name "published in."  pq:P2868 has human-readable name "subject has role."  wd:Q13432985 has human-readable name "B-side."  Transform the SPARQL query to a natural language question. Output just the transformed question	Which performers are associated with songs published in a B-side by the Ramones?	Give me all B-sides of the Ramones.	No	
+22	gpt-3.5-turbo	en	ZERO_SHOT	Having a SPARQL query: SELECT (COUNT(DISTINCT ?uri) as ?count) WHERE { <http://www.wikidata.org/entity/Q83233> <http://www.wikidata.org/prop/direct/P40>/<http://www.wikidata.org/prop/direct/P40> ?uri }   Where:  http://www.wikidata.org/entity/Q83233 has human-readable name "Jacques Cousteau."  http://www.wikidata.org/prop/direct/P40 has human-readable name "child."  http://www.wikidata.org/prop/direct/P40 has human-readable name "child."  Transform the SPARQL query to a natural language question. Output just the transformed question	How many children does Jacques Cousteau have?	How many grand-children did Jacques Cousteau have?	Yes	
+97	gpt-3.5-turbo	en	ZERO_SHOT	Having a SPARQL query: PREFIX p: <http://www.wikidata.org/prop/> PREFIX ps: <http://www.wikidata.org/prop/statement/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT DISTINCT ?uri WHERE { wd:Q162371 p:P161/ps:P161/wdt:P856 ?uri . }   Where:  wd:Q162371 has human-readable name "Charmed."  p:P161 has human-readable name "cast member."  ps:P161 has human-readable name "cast member."  wdt:P856 has human-readable name "official website."  Transform the SPARQL query to a natural language question. Output just the transformed question	Which official website is associated with a cast member of the show "Charmed"?	Give me the official websites of actors of the television show Charmed.	Yes	
+173	gpt-3.5-turbo	en	ZERO_SHOT	Having a SPARQL query: PREFIX wd: <http://www.wikidata.org/entity/> PREFIX pq: <http://www.wikidata.org/prop/qualifier/> PREFIX p: <http://www.wikidata.org/prop/> PREFIX ps: <http://www.wikidata.org/prop/statement/> SELECT ?date WHERE { wd:Q33 p:P463 ?membership . ?membership pq:P580 ?date . ?membership ps:P463 wd:Q458 . }    Where:  wd:Q33 has human-readable name "Finland."  p:P463 has human-readable name "member of."  pq:P580 has human-readable name "start time."  ps:P463 has human-readable name "member of."  wd:Q458 has human-readable name "European Union."  Transform the SPARQL query to a natural language question. Output just the transformed question	What is the start time of Finland's membership in the European Union?	When did Finland join the EU?	Yes	
+25	gpt-3.5-turbo	en	ZERO_SHOT	Having a SPARQL query: SELECT DISTINCT ?uri WHERE { ?uri <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q4022> . ?uri <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q148> . ?uri <http://www.wikidata.org/prop/direct/P2043> ?length } ORDER BY DESC(?length) LIMIT 1   Where:  http://www.wikidata.org/prop/direct/P31 has human-readable name "instance of."  http://www.wikidata.org/entity/Q4022 has human-readable name "river."  http://www.wikidata.org/prop/direct/P17 has human-readable name "country."  http://www.wikidata.org/entity/Q148 has human-readable name "People's Republic of China."  http://www.wikidata.org/prop/direct/P2043 has human-readable name "length."  Transform the SPARQL query to a natural language question. Output just the transformed question	What is the URI of the river in the People's Republic of China with the longest length?	What is the longest river in China?	No	
+38	gpt-3.5-turbo	en	ZERO_SHOT	Having a SPARQL query: PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?uri WHERE { { wd:Q76936 wdt:P527+ ?uri . } UNION { wd:Q76936 wdt:P527* ?islandgroup . ?uri wdt:P361+ ?islandgroup . } ?uri wdt:P17 wd:Q55 . ?uri wdt:P31 wd:Q23442 . }    Where:  wd:Q76936 has human-readable name "Frisian Islands."  wdt:P527 has human-readable name "has part(s)."  wd:Q76936 has human-readable name "Frisian Islands."  wdt:P527 has human-readable name "has part(s)."  wdt:P361 has human-readable name "part of."  wdt:P17 has human-readable name "country."  wd:Q55 has human-readable name "Netherlands."  wdt:P31 has human-readable name "instance of."  wd:Q23442 has human-readable name "island."  Transform the SPARQL query to a natural language question. Output just the transformed question	Which islands that are part of the Frisian Islands, are located in the Netherlands and are classified as islands in Wikidata?	Give me all Frisian islands that belong to the Netherlands.	No	
+42	gpt-3.5-turbo	en	ZERO_SHOT	#N/A			Not done	
+188	gpt-3.5-turbo	en	ZERO_SHOT	Having a SPARQL query: PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> SELECT ?uri WHERE { wd:Q25161472 wdt:P856 ?uri }    Where:  wd:Q25161472 has human-readable name "Forbes."  wdt:P856 has human-readable name "official website."  Transform the SPARQL query to a natural language question. Output just the transformed question	What is the official website of Forbes?	Give me the homepage of Forbes.	Yes	
+19								
+29								
+199								
+149								
+152								
+213								
+165								
+4								
+120								
+201								
+154								
+13								
+163								
+177								
+176								
+166								
+21								
+95								
+60								
+206								
+101								
+78								
+44								
+138								
+99								
+135								
+134								
+192								
+110								
+143								
+156								
+7								
+43								
+194								
+49								
+92								
+84								
+144								
+96								
+164								
+1								
+162								
+15								
+210								
+207								
+136								
+181								
+40								
+157								
+79								
+94								
+103								
+140								
+82								
+31								
+132								
+98								
+175								
+81								
+10								
+168								
+169								
+131								
+160								
+129								
+133								
+62								
+174								
+178								
+104								
+182								
+128								
+203								
+51								
+137								
+150								
+115								
+214								
+64								
+87								
+102								
+111								
+50								
+197								
+116								
+189								
