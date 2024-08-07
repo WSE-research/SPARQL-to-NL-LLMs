@@ -1,4 +1,8 @@
-= SPARQL-to-natural-language
+= SPARQL to Natural Language
+
+This is a repo of the "Understanding SPARQL Queries: Are We Already There? Multilingual Natural Language Generation based on SPARQL Queries and Large Language Models" paper.
+
+The paper was accepted at the main track of the ISWC 2024.
 
 == Data
 
